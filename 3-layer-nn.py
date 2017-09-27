@@ -18,9 +18,10 @@ This is our pattern.
 import numpy as np
 
 def nonlin(x,deriv=False):
+     # return slope for scaling error
 	if(deriv==True):
 	    return x*(1-x)
-
+     # return sigmoid
 	return 1/(1+np.exp(-x))
     
 X = np.array([[0,0,1],
@@ -65,7 +66,6 @@ for j in range(60000):
 
     syn1 += l1.T.dot(l2_delta)
     syn0 += l0.T.dot(l1_delta)
-
 
 
 """
